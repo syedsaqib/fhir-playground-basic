@@ -1,8 +1,10 @@
 Doe
 Harvey
 Hicks
+Hoffman
 Johnson
 Kennedy
 Wilson
 Agnew
+Peter
 Smith

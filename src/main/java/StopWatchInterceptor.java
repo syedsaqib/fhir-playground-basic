@@ -25,4 +25,8 @@ public class StopWatchInterceptor implements IClientInterceptor {
 
         log.info("--> Got response. time taken: {} milli-seconds.\nDuration: {}", stopWatch.getTime(), stopWatch);
     }
+
+    public long getLastRequestResponseTime() {
+        return stopWatch.getTime();
+    }
 }
