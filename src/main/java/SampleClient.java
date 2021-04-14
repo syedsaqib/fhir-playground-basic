@@ -18,10 +18,20 @@ public class SampleClient {
                 .search()
                 .forResource("Patient")
                 .where(Patient.FAMILY.matches().value("SMITH"))
+                .sort().ascending("given")
                 .returnBundle(Bundle.class)
                 .execute();
 
-
+        System.out.println("First Name    |   Last Name  |    DOB   ");
+        System.out.println("----------------------------------------");
+        final String format = "%-14s | %14s | %10s";
+        response.getEntry()
+                .stream()
+                .map(Bundle.BundleEntryComponent::getResource)
+                .map( r -> (Patient) r)
+                .map(PatientDecorator::new)
+                .forEach( decorator -> System.out.println(String.format(format, decorator.getFirstName(),
+                                                            decorator.getLastName(), decorator.getDob())));
     }
 
 }
