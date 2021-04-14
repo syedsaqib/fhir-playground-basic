@@ -53,7 +53,8 @@ public class SampleClient {
                                 decorator.getLastName(), decorator.getDob()));
             });
 
-            log.info("Avg time for {} last names = {} ms", lastNames.size(), (totalResponseTime.get() / lastNames.size()));
+            log.info("\n----> Avg time for loop={}, {} last names = {} ms <----", loop,
+                    lastNames.size(), (totalResponseTime.get() / lastNames.size()));
         }
     }
 
